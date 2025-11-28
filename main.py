@@ -5,10 +5,13 @@ import requests
 import numpy as np # 需要安装 numpy: pip install numpy
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
+from dotenv import load_dotenv
+# 加载 .env 文件中的环境变量
+load_dotenv()
 
-# ==================== 基础配置 ====================
-BOT_TOKEN = '你的_BOT_TOKEN_在这里'
-API_URL = "https://pc28.help/kj.json?limit=200" # 获取更多数据以建立矩阵
+# --- 环境变量读取 ---
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_URL = os.grtenv("API_URL") # 获取更多数据以建立矩阵
 DATA_FILE = "groups.json"
 SHOW_LIMIT = 8
 
